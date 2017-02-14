@@ -1,8 +1,8 @@
 {
   "name": "vscode-docker",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "publisher": "PeterJausovec",
-  "displayName": "Docker Support",
+  "displayName": "Docker",
   "description": "Adds syntax highlighting, snippets, commands, hover tips, and linting for Dockerfile and docker-compose files.",
   "license": "SEE LICENSE IN LICENSE.md",
   "icon": "images/docker_icon.svg",
@@ -39,7 +39,8 @@
     "onCommand:vscode-docker.compose.up",
     "onCommand:vscode-docker.compose.down",
     "onCommand:vscode-docker.configure",
-    "onCommand:vscode-docker.debug.configureLaunchJson"
+    "onCommand:vscode-docker.debug.configureLaunchJson",
+    "onCommand:vscode-docker.system.prune"
   ],
   "main": "./out/dockerExtension",
   "contributes": {
@@ -175,11 +176,16 @@
         "command": "vscode-docker.image.push",
         "title": "Docker: Push",
         "description": "Push an image to a registry"
+      },
+      {
+        "command": "vscode-docker.system.prune",
+        "title": "Docker: System Prune",
+        "description": "Removes unused data"
       }
     ]
   },
   "engines": {
-    "vscode": "^1.5.1"
+    "vscode": "^1.9.0"
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./",
@@ -196,7 +202,7 @@
     "@types/node": "^6.0.40"
   },
   "dependencies": {
-    "dockerfile_lint": "^0.2.4",
+    "dockerfile_lint": "^0.2.6",
     "dockerode": "^2.3.0"
   }
 }
