@@ -54,14 +54,10 @@ EXPOSE ${port}
         case '.net core':
 
             return `
-<<<<<<< HEAD
 # For console applications use dotnet
 #FROM microsoft/dotnet:1.1-runtime
 FROM microsoft/aspnetcore
 MAINTAINER ${author}
-=======
-FROM microsoft/aspnetcore:1.0.1
->>>>>>> upstream/master
 LABEL Name=${serviceName} Version=${version} 
 ARG source=.
 WORKDIR /app
